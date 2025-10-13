@@ -1,0 +1,10 @@
+name: flask-classifier
+services:
+  app:
+    container_name: flask-classifier
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/app

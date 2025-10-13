@@ -1,0 +1,8 @@
+age
+wage per hour
+capital gains
+capital losses
+dividends from stocks
+instance weight
+num persons worked for employer
+weeks worked in year
