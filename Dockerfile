@@ -10,8 +10,16 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
+RUN pip install --upgrade ipython ipykernel
+
+RUN ipython kernel install --name "tp2-env" --user
+
 COPY . .
+
+USER root
+
+RUN chmod +x /app/script.sh
 
 EXPOSE 5000
 
-CMD "jupyter nbconvert --to html --execute data_analysis.ipynb --output data_analysis.html --output-dir ./templates/ && python app.py"
+CMD ["/app/script.sh"]
